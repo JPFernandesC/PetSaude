@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "projeto",
+    "name": "petsaude",
     "slug": "projeto",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -27,3 +27,4 @@
     }
   }
 }
+
