@@ -28,11 +28,24 @@ export default function PetFormScreen() {
   };
 
   const handleSave = async () => {
-    if (validate()) {
+  if (validate()) {
+    try {
       await savePet({ nome, idade, tipo, raca, telefone });
-      navigation.goBack();
+      alert('Pet cadastrado com sucesso!');
+      setNome('');
+      setIdade('');
+      setRaca('');
+      setTelefone('');
+      setTipo('');
+      navigation.navigate('Pets'); // Vá para a lista de pets
+    } catch (error) {
+      console.error(error);
+      alert('Erro ao cadastrar o pet.');
     }
-  };
+  }
+};
+
+
 
   return (
     <ScrollView contentContainerStyle={styles.container}>

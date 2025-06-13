@@ -10,16 +10,5 @@ export default function App() {
   );
 }
 
-{
-  "expo": {
-    "name": "petsaude",
-    "slug": "petsaude",
-    ...
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    ...
-  }
-}
 
 
