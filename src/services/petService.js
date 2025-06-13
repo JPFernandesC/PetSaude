@@ -1,20 +1,20 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-// Chave que vamos usar no AsyncStorage
+
 const PETS_KEY = '@pets_data';
 
-// Buscar todos os pets
+
 export const getAllPets = async () => {
   try {
     const pets = await AsyncStorage.getItem(PETS_KEY);
-    return pets ? JSON.parse(pets) : []; // se nada, um array vazio
+    return pets ? JSON.parse(pets) : []; 
   } catch (error) {
     console.error('Erro ao buscar pets!', error);
-    return []; // fallback
+    return [];
   }
 };
 
-// Salvar um novo pet
+
 export const savePet = async (newPet) => {
   try {
     const pets = await getAllPets();
@@ -26,7 +26,7 @@ export const savePet = async (newPet) => {
   }
 };
  
-// Atualizar um pet existente
+
 export const updatePet = async (updatedPet) => {
   try {
     const pets = await getAllPets();
@@ -40,7 +40,7 @@ export const updatePet = async (updatedPet) => {
 };
 
 
-// Remover um pet
+
 export const deletePet = async (id) => {
   try {
     const pets = await getAllPets();
@@ -51,7 +51,7 @@ export const deletePet = async (id) => {
   }
 };
 
-// Agora o getPets faz exatamente o que o getAllPets faz
+
 export async function getPets() {
   return await getAllPets();
 }
