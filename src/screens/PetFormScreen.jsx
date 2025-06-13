@@ -37,7 +37,7 @@ export default function PetFormScreen() {
       setRaca('');
       setTelefone('');
       setTipo('');
-      navigation.navigate('Pets'); // Vá para a lista de pets
+      navigation.navigate('Pets');
     } catch (error) {
       console.error(error);
       alert('Erro ao cadastrar o pet.');

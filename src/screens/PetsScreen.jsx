@@ -9,7 +9,7 @@ export default function PetsScreen() {
   const [pets, setPets] = useState([]);
   const navigation = useNavigation();
 
-  // Carregar pets ao focar na tela
+  
   useFocusEffect(
     useCallback(() => {
       loadPets();
@@ -22,7 +22,7 @@ export default function PetsScreen() {
   };
 
   const handleEdit = (pet) => {
-    // Vá para o formulário para atualizar o pet
+
     navigation.navigate('PetForm', { pet });
   };
 

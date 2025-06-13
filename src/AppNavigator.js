@@ -10,8 +10,7 @@ import PetsScreen from './screens/PetsScreen';
 import PetFormScreen from './screens/PetFormScreen';
 import DashboardScreen from './screens/DashboardScreen';
 
-const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
+const Stack = createBottomTabNavigator();
 
 function PetsStack() {
   return (
@@ -24,25 +23,31 @@ function PetsStack() {
 
 export default function AppNavigator() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          headerShown: false,
-          tabBarIcon: ({ color, size }) => {
-            let iconName;
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        headerShown: false,
+        tabBarIcon: ({ color, size }) => {
+          
+          let iconName;
 
-            if (route.name === 'Início') iconName = 'home';
-            else if (route.name === 'Pets') iconName = 'dog';
-            else if (route.name === 'Dashboard') iconName = 'view-dashboard';
+          if (route.name === 'Inicio') iconName = 'home';
+          else if (route.name === 'Pets') iconName = 'dog';
+          else if (route.name === 'Dashboard') iconName = 'view-dashboard';
 
-            return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
-          },
-        })}
-      >
-        <Tab.Screen name="Início" component={HomeScreen} />
-        <Tab.Screen name="Pets" component={PetsStack} />
-        <Tab.Screen name="Dashboard" component={DashboardScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
+          return ( 
+            <MaterialCommunityIcons 
+              name={iconName} 
+              size={size} 
+              color={color} 
+            />
+          );
+        },
+      })}
+    >
+      <Tab.Screen name="Inicio" component={HomeScreen} />
+      <Tab.Screen name="Pets" component={PetsStack} />
+      <Tab.Screen name="Dashboard" component={DashboardScreen} />
+    </Tab.Navigator>
   );
 }
+
