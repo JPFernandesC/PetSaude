@@ -11,6 +11,7 @@ import PetFormScreen from './screens/PetFormScreen';
 import DashboardScreen from './screens/DashboardScreen';
 
 const Stack = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 function PetsStack() {
   return (
